@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Giochi</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2196f3">
+    <link rel="icon" href="/static/icons/512.png">
+</head>
+<body>
+    <h1>Scegli un gioco</h1>
+    <ul>
+        <li><a href="/play">Tris Online</a></li>
+        <!-- <li><a href="/altro-gioco">Altro Gioco</a></li> -->
+    </ul>
+</body>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(reg => console.log('Service Worker registrato:', reg))
+      .catch(err => console.error('Errore nel Service Worker:', err));
+  }
+</script>
+</html>
