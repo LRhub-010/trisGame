@@ -2,7 +2,7 @@ from flask import Flask, render_template, session, send_from_directory
 import uuid
 from tris import register_tris_routes
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 app.secret_key = 'supersecret'
 
 @app.route('/')
