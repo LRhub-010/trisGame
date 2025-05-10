@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: tris-online
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn menu:app
