@@ -43,7 +43,9 @@ def register_tris_routes(app):
     @app.route('/move', methods=['POST'])
     def move():
         data = request.json
-        game = next(g for g in games if g['id'] == data['game_id'])
+        game = next((g for g in games if g['id'] == game_id), None)
+        if game is None:
+            return jsonify({'error': 'Game not found'}), 404
         index = int(data['index'])
         player_id = session['player_id']
 
